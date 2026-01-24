@@ -1,0 +1,113 @@
+{
+  "personalInfo": {
+    "name": "John Doe Johnson",
+
+    "summary": "Full Stack Developer with 5 years of experience in building web applications using modern technologies. Skilled in JavaScript, React, Node.js, and database management.",
+    "socials": [
+      {
+        "type": "email",
+        "value": "john@example.com"
+      },
+      {
+        "type": "phone",
+        "value": "+1234567890"
+      },
+      {
+        "type": "linkedin",
+        "value": "linkedin.com/in/johnjohnson"
+      },
+      {
+        "type": "github",
+        "value": "github.com/johnjohnson"
+      },
+      {
+        "type": "website",
+        "value": "www.johnjohnson.com"
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "B.Sc. in Computer Science",
+      "institution": "University of Technology",
+      "startDate": "2015-09-01",
+      "endDate": "2019-06-30",
+      "grade": "15/20",
+      "location": "Cityville, US"
+    }
+  ],
+  "workExperience": [
+    {
+      "position": "Full Stack Developer",
+      "company": "Tech Solutions Inc.",
+      "startDate": "2019-07-01",
+      "endDate": "2024-06-30",
+      "location": "Remote",
+      "highlights": [
+        "Developed and maintained web applications using React and Node.js.",
+        "Collaborated with cross-functional teams to define, design, and ship new features.",
+        "Optimized applications for maximum speed and scalability.",
+        "Managed database design and implementation."
+      ]
+    },
+    {
+      "position": "Junior Developer",
+      "company": "Web Innovations LLC",
+      "startDate": "2018-06-01",
+      "endDate": "2019-06-30",
+      "location": "Cityville, US",
+      "highlights": [
+        "Assisted in the development of client websites using HTML, CSS, and JavaScript.",
+        "Participated in code reviews and team meetings.",
+        "Contributed to the improvement of development processes."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-commerce Platform",
+      "technologies": ["React", "Node.js", "MongoDB", "AWS"],
+      "startDate": "2022-01-01",
+      "endDate": "2022-12-31",
+      "projectUrl": "https://www.ecommerceplatform.com",
+      "highlights": [
+        "Built a full-featured e-commerce platform using React and Node.js.",
+        "Implemented user authentication, product management, and payment processing.",
+        "Deployed the application on AWS, ensuring high availability and scalability."
+      ]
+    },
+    {
+      "title": "Social Media App",
+      "technologies": ["Django", "PostgreSQL", "Docker"],
+      "startDate": "2021-01-01",
+      "endDate": "2021-12-31",
+      "projectUrl": null,
+      "highlights": [
+        "Developed a social media application with features like user profiles, posts, and messaging.",
+        "Used Django for backend development and PostgreSQL for database management.",
+        "Containerized the application using Docker for easy deployment."
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "title": "Full Stack Web Development",
+      "issuer": "Scrimba",
+      "issueDate": "2023-05-15",
+      "credentialUrl": null
+    },
+    {
+      "title": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "issueDate": "2022-11-20",
+      "credentialUrl": "https://www.youracclaim.com/badges/aws-certified-solutions-architect"
+    }
+  ],
+  "skills": {
+    "programmingLanguages": ["JavaScript", "TypeScript", "Python", "Java"],
+    "frameworks": ["React", "Node.js", "Express", "Django"],
+    "databases": ["MongoDB", "PostgreSQL", "MySQL"],
+    "developerTools": ["Git", "Docker", "Jenkins", "AWS"]
+  }
+}
