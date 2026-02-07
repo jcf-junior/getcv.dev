@@ -1,22 +1,26 @@
-import { cvData } from "./data/data";
 import type {
   Certification,
   Education,
   Project,
   Social,
   WorkExperience,
+  CVData,
 } from "./types/cv";
 import { formatDate, formatPeriod } from "./utils/formatDate";
 
-export default function Cv() {
+type CvProps = {
+  cvData: CVData;
+};
+
+export default function Cv( { cvData }: CvProps ) {
   return (
     <div className="shadow my-0 mx-auto lm leading-[1.2em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white">
       <section className="mt-[5pt] mb-[5pt]">
-        <h1 className="text-center text-[24.79pt] font-bold mb-[5pt]">
+        <h1 className="text-center text-[24.79pt] font-bold">
           {cvData.personalInfo.name}
         </h1>
 
-        <div className="w-[97%] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap">
+        <div className="max-w-[97%] mt-[10pt] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap">
           {cvData.personalInfo.socials.map((social: Social) => {
             return (
               <span
