@@ -53,7 +53,7 @@ interface Skills {
 export interface CVData {
   personalInfo: PersonalInfo;
   education: Education[] | null;
-  workExperience: WorkExperience[] | null;
+  workExperience: WorkExperience[];
   projects: Project[] | null;
   certifications: Certification[] | null;
   skills: Skills | null;
