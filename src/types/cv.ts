@@ -13,25 +13,27 @@ export interface Education {
   degree: string;
   institution: string;
   startDate: string;
-  endDate: string | null;
+  endDate: string;
   grade: string | null;
   location: string;
 }
 
 export interface WorkExperience {
+  id: string;
   position: string;
   company: string;
   startDate: string;
-  endDate: string | null;
+  endDate: string;
   highlights: string[];
   location: string;
 }
 
 export interface Project {
+  id: string;
   title: string;
   technologies: string[];
   startDate: string;
-  endDate: string | null;
+  endDate: string;
   projectUrl: string | null;
   highlights: string[];
 }
@@ -54,7 +56,7 @@ export interface CVData {
   personalInfo: PersonalInfo;
   education: Education[] | null;
   workExperience: WorkExperience[];
-  projects: Project[] | null;
+  projects: Project[];
   certifications: Certification[] | null;
   skills: Skills | null;
 }

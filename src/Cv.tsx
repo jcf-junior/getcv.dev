@@ -12,7 +12,7 @@ type CvProps = {
   cvData: CVData;
 };
 
-export default function Cv( { cvData }: CvProps ) {
+export default function Cv({ cvData }: CvProps) {
   return (
     <div className="shadow my-0 mx-auto lm leading-[1.2em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white">
       <section className="mt-[5pt] mb-[5pt]">
@@ -58,16 +58,20 @@ export default function Cv( { cvData }: CvProps ) {
         </section>
       )}
 
-      {cvData.workExperience && (
+      {cvData.workExperience?.length > 0 && (
         <section className="mt-[5pt] mb-[5pt]">
           <span className="section-title">Experience</span>
 
           {cvData.workExperience.map((job: WorkExperience) => {
-            return (
-              <div
-                className="ml-[0.15in] mb-[5pt] w-[97%]"
-                key={`${job.position}-${job.company}-${job.startDate}-${job.endDate}`}
-              >
+            const emptyExperience: boolean =
+              job.company.trim() == "" &&
+              job.position.trim() == "" &&
+              job.location.trim() == "" &&
+              job.startDate.trim() == "" &&
+              job.endDate.trim() == "";
+
+            return emptyExperience ? null : (
+              <div className="ml-[0.15in] mb-[5pt] w-[97%]" key={`${job.id}`}>
                 <div className="flex justify-between">
                   <div>
                     <strong>{job.position}</strong>
@@ -82,7 +86,11 @@ export default function Cv( { cvData }: CvProps ) {
 
                 <ul className="list-disc no-underline ml-[25pt] small mt-1">
                   {job.highlights.map((highlight: string, index: number) => {
-                    return <li key={`highlight-${index}`}>{highlight}</li>;
+                    return highlight.trim() === "" ? (
+                      ""
+                    ) : (
+                      <li key={`highlight-${index}`}>{highlight.trim()}</li>
+                    );
                   })}
                 </ul>
               </div>
@@ -91,7 +99,7 @@ export default function Cv( { cvData }: CvProps ) {
         </section>
       )}
 
-      {cvData.projects && (
+      {cvData.projects?.length > 0 && (
         <section className="mt-[5pt] mb-[5pt]">
           <span className="section-title">Projects</span>
           <div className="ml-[0.15in] w-[97%] mb-[5pt]">
@@ -99,7 +107,7 @@ export default function Cv( { cvData }: CvProps ) {
               return (
                 <div
                   className="mb-[5pt]"
-                  key={`${project.title}-${project.startDate}-${project.endDate}`}
+                  key={`${project.id}`}
                 >
                   <div className="flex justify-between align-center">
                     <div className="flex gap-1.5">

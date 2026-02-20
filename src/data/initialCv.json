@@ -38,6 +38,7 @@
   ],
   "workExperience": [
     {
+      "id": "1",
       "position": "Full Stack Developer",
       "company": "Tech Solutions Inc.",
       "startDate": "2019-07-01",
@@ -51,6 +52,7 @@
       ]
     },
     {
+      "id": "2",
       "position": "Junior Developer",
       "company": "Web Innovations LLC",
       "startDate": "2018-06-01",
@@ -65,6 +67,7 @@
   ],
   "projects": [
     {
+      "id": "1",
       "title": "E-commerce Platform",
       "technologies": ["React", "Node.js", "MongoDB", "AWS"],
       "startDate": "2022-01-01",
@@ -77,6 +80,7 @@
       ]
     },
     {
+      "id": "2",
       "title": "Social Media App",
       "technologies": ["Django", "PostgreSQL", "Docker"],
       "startDate": "2021-01-01",

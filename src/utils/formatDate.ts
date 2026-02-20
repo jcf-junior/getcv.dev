@@ -12,6 +12,6 @@ export const formatDate = (dateString: string | null): string => {
   return formatted.replace(" ", ". ");
 };
 
-export const formatPeriod = (start: string, end: string | null): string => {
+export const formatPeriod = (start = "2020-01-01", end: string | null): string => {
   return `${formatDate(start)} - ${formatDate(end)}`;
 };
