@@ -28,6 +28,7 @@
   },
   "education": [
     {
+      "id": "1",
       "degree": "B.Sc. in Computer Science",
       "institution": "University of Technology",
       "startDate": "2015-09-01",
@@ -38,6 +39,7 @@
   ],
   "workExperience": [
     {
+      "id": "1",
       "position": "Full Stack Developer",
       "company": "Tech Solutions Inc.",
       "startDate": "2019-07-01",
@@ -51,6 +53,7 @@
       ]
     },
     {
+      "id": "2",
       "position": "Junior Developer",
       "company": "Web Innovations LLC",
       "startDate": "2018-06-01",
@@ -65,6 +68,7 @@
   ],
   "projects": [
     {
+      "id": "1",
       "title": "E-commerce Platform",
       "technologies": ["React", "Node.js", "MongoDB", "AWS"],
       "startDate": "2022-01-01",
@@ -77,6 +81,7 @@
       ]
     },
     {
+      "id": "2",
       "title": "Social Media App",
       "technologies": ["Django", "PostgreSQL", "Docker"],
       "startDate": "2021-01-01",
@@ -92,12 +97,14 @@
 
   "certifications": [
     {
+      "id": "1",
       "title": "Full Stack Web Development",
       "issuer": "Scrimba",
       "issueDate": "2023-05-15",
       "credentialUrl": null
     },
     {
+      "id": "2",
       "title": "AWS Certified Solutions Architect",
       "issuer": "Amazon Web Services",
       "issueDate": "2022-11-20",
