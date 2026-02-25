@@ -28,6 +28,7 @@
   },
   "education": [
     {
+      "id": "1",
       "degree": "B.Sc. in Computer Science",
       "institution": "University of Technology",
       "startDate": "2015-09-01",
@@ -96,12 +97,14 @@
 
   "certifications": [
     {
+      "id": "1",
       "title": "Full Stack Web Development",
       "issuer": "Scrimba",
       "issueDate": "2023-05-15",
       "credentialUrl": null
     },
     {
+      "id": "2",
       "title": "AWS Certified Solutions Architect",
       "issuer": "Amazon Web Services",
       "issueDate": "2022-11-20",

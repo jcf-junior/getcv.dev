@@ -1,20 +1,21 @@
 export interface PersonalInfo {
   name: string;
-  summary: string | null;
+  summary: string;
   socials: Social[];
 }
 
 export interface Social {
-  type: string | null;
-  value: string | null;
+  type: string;
+  value: string;
 }
 
 export interface Education {
+  id: string;
   degree: string;
   institution: string;
   startDate: string;
   endDate: string;
-  grade: string | null;
+  grade: string;
   location: string;
 }
 
@@ -34,29 +35,30 @@ export interface Project {
   technologies: string[];
   startDate: string;
   endDate: string;
-  projectUrl: string | null;
+  projectUrl: string;
   highlights: string[];
 }
 
 export interface Certification {
+  id: string;
   title: string;
   issuer: string;
   issueDate: string;
-  credentialUrl: string | null;
+  credentialUrl: string;
 }
 
-interface Skills {
-  programmingLanguages: string[] | null;
-  frameworks: string[] | null;
-  databases: string[] | null;
-  developerTools: string[] | null;
+export interface Skill {
+  programmingLanguages: string[];
+  frameworks: string[];
+  databases: string[];
+  developerTools: string[];
 }
 
 export interface CVData {
   personalInfo: PersonalInfo;
-  education: Education[] | null;
+  education: Education[];
   workExperience: WorkExperience[];
   projects: Project[];
-  certifications: Certification[] | null;
-  skills: Skills | null;
+  certifications: Certification[];
+  skills: Skill;
 }

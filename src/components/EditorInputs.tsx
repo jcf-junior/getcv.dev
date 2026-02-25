@@ -1,5 +1,6 @@
 import type { CVData } from "../types/cv";
 import CertificationInputs from "./inputs/CertificationInputs";
+import EducationInputs from "./inputs/EducationInputs";
 import ExperienceInputs from "./inputs/ExperienceInputs";
 import PersonalInfoInputs from "./inputs/PersonalInfoInputs";
 import ProjectsInputs from "./inputs/ProjectsInputs";
@@ -26,6 +27,13 @@ export default function EditorInputs({ cvData, setCvData }: Props) {
           setCvData((cv) => ({ ...cv, personalInfo }));
         }}
       />
+      <EducationInputs 
+        value={cvData.education}
+        onChange={(education) => {
+          setCvData((cv) => ({...cv, education}))
+        }}
+      />
+
       <ExperienceInputs
         value={cvData.workExperience}
         onChange={(workExperience) => {
@@ -40,10 +48,18 @@ export default function EditorInputs({ cvData, setCvData }: Props) {
         }}
       />
 
-      <SkillsInputs skills={cvData.skills} setCvData={setCvData} />
+      <SkillsInputs 
+        value={cvData.skills}
+        onChange={(skills) => {
+          setCvData((cv) => ({...cv, skills}))
+        }}
+       />
+
       <CertificationInputs
-        certifications={cvData.certifications}
-        setCvData={setCvData}
+        value={cvData.certifications}
+        onChange={(certifications) => {
+          setCvData((cv) => ({...cv, certifications}))
+        }}
       />
     </div>
   );

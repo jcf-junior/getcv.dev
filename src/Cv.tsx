@@ -13,6 +13,7 @@ type CvProps = {
 };
 
 export default function Cv({ cvData }: CvProps) {
+
   return (
     <div className="shadow my-0 mx-auto lm leading-[1.2em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white">
       <section className="mt-[5pt] mb-[5pt]">
@@ -42,7 +43,7 @@ export default function Cv({ cvData }: CvProps) {
             return (
               <div
                 className="ml-[0.15in] flex justify-between w-[97%] mb-[5pt]"
-                key={`${edu.degree}-${edu.institution}-${edu.startDate}-${edu.endDate}`}
+                key={`${edu.id}`}
               >
                 <div>
                   <strong className="">{edu.institution}</strong>
@@ -105,10 +106,7 @@ export default function Cv({ cvData }: CvProps) {
           <div className="ml-[0.15in] w-[97%] mb-[5pt]">
             {cvData.projects.map((project: Project) => {
               return (
-                <div
-                  className="mb-[5pt]"
-                  key={`${project.id}`}
-                >
+                <div className="mb-[5pt]" key={`${project.id}`}>
                   <div className="flex justify-between align-center">
                     <div className="flex gap-1.5">
                       <strong className="pr-1.5 small border-r-1 border-black">
@@ -139,14 +137,20 @@ export default function Cv({ cvData }: CvProps) {
         </section>
       )}
 
-      {cvData.certifications && (
+      {cvData.certifications?.length > 0 && (
         <section className="mt-[5pt] mb-[5pt]">
           <span className="section-title">Certifications</span>
           {cvData.certifications.map((certification: Certification) => {
-            return (
+            const emptyExperience: boolean =
+              certification.title.trim() == "" &&
+              certification.issuer.trim() == "" &&
+              certification.issueDate.trim() == "" &&
+              certification.credentialUrl.trim() == ""
+
+            return emptyExperience ? null : (
               <div
                 className="flex w-[97%] ml-[0.15in] justify-between mb-[5pt] small"
-                key={`${certification.title}-${certification.issuer}-${certification.issueDate}`}
+                key={`${certification.id}`}
               >
                 <div className="flex gap-1.5">
                   <strong>{certification.issuer}</strong>
@@ -164,28 +168,28 @@ export default function Cv({ cvData }: CvProps) {
         <section className="mt-[5pt] mb-[5pt]">
           <span className="section-title">Technical Skills</span>
           <div className="w-[97%] ml-[0.15in] small">
-            {cvData.skills.programmingLanguages && (
+            {cvData.skills.programmingLanguages.length > 0 && (
               <div>
-                <strong>Languages: </strong>
+                <strong>Programming Languages: </strong>
                 <span>{cvData.skills.programmingLanguages.join(", ")}</span>
               </div>
             )}
 
-            {cvData.skills.frameworks && (
+            {cvData.skills.frameworks.length > 0 && (
               <div>
                 <strong>Frameworks / Libraries: </strong>
                 <span>{cvData.skills.frameworks.join(", ")}</span>
               </div>
             )}
 
-            {cvData.skills.databases && (
+            {cvData.skills.databases.length > 0 && (
               <div>
                 <strong>Databases: </strong>
                 <span>{cvData.skills.databases.join(", ")}</span>
               </div>
             )}
 
-            {cvData.skills.developerTools && (
+            {cvData.skills.developerTools.length > 0 && (
               <div>
                 <strong>Developer Tools: </strong>
                 <span>{cvData.skills.developerTools.join(", ")}</span>
