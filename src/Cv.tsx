@@ -14,6 +14,13 @@ type CvProps = {
 
 export default function Cv({ cvData }: CvProps) {
 
+  const hasSkills =
+    cvData.skills?.programmingLanguages?.length > 0 ||
+    cvData.skills?.frameworks?.length > 0 ||
+    cvData.skills?.databases?.length > 0 ||
+    cvData.skills?.developerTools?.length > 0;
+
+
   return (
     <div className="shadow my-0 mx-auto lm leading-[1.2em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white">
       <section className="mt-[5pt] mb-[5pt]">
@@ -35,7 +42,7 @@ export default function Cv({ cvData }: CvProps) {
         </div>
       </section>
 
-      {cvData.education && (
+      {cvData.education?.length > 0 && (
         <section className="mt-[5pt] mb-[5pt]">
           <span className="section-title">Education</span>
 
@@ -145,7 +152,7 @@ export default function Cv({ cvData }: CvProps) {
               certification.title.trim() == "" &&
               certification.issuer.trim() == "" &&
               certification.issueDate.trim() == "" &&
-              certification.credentialUrl.trim() == ""
+              certification.credentialUrl.trim() == "";
 
             return emptyExperience ? null : (
               <div
@@ -164,40 +171,40 @@ export default function Cv({ cvData }: CvProps) {
         </section>
       )}
 
-      {cvData.skills && (
-        <section className="mt-[5pt] mb-[5pt]">
-          <span className="section-title">Technical Skills</span>
-          <div className="w-[97%] ml-[0.15in] small">
-            {cvData.skills.programmingLanguages.length > 0 && (
-              <div>
-                <strong>Programming Languages: </strong>
-                <span>{cvData.skills.programmingLanguages.join(", ")}</span>
-              </div>
-            )}
+      {hasSkills && (
+          <section className="mt-[5pt] mb-[5pt]">
+            <span className="section-title">Technical Skills</span>
+            <div className="w-[97%] ml-[0.15in] small">
+              {cvData.skills.programmingLanguages.length > 0 && (
+                <div>
+                  <strong>Programming Languages: </strong>
+                  <span>{cvData.skills.programmingLanguages.join(", ")}</span>
+                </div>
+              )}
 
-            {cvData.skills.frameworks.length > 0 && (
-              <div>
-                <strong>Frameworks / Libraries: </strong>
-                <span>{cvData.skills.frameworks.join(", ")}</span>
-              </div>
-            )}
+              {cvData.skills.frameworks.length > 0 && (
+                <div>
+                  <strong>Frameworks / Libraries: </strong>
+                  <span>{cvData.skills.frameworks.join(", ")}</span>
+                </div>
+              )}
 
-            {cvData.skills.databases.length > 0 && (
-              <div>
-                <strong>Databases: </strong>
-                <span>{cvData.skills.databases.join(", ")}</span>
-              </div>
-            )}
+              {cvData.skills.databases.length > 0 && (
+                <div>
+                  <strong>Databases: </strong>
+                  <span>{cvData.skills.databases.join(", ")}</span>
+                </div>
+              )}
 
-            {cvData.skills.developerTools.length > 0 && (
-              <div>
-                <strong>Developer Tools: </strong>
-                <span>{cvData.skills.developerTools.join(", ")}</span>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
+              {cvData.skills.developerTools.length > 0 && (
+                <div>
+                  <strong>Developer Tools: </strong>
+                  <span>{cvData.skills.developerTools.join(", ")}</span>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
     </div>
   );
 }

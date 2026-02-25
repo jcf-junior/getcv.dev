@@ -76,7 +76,7 @@ export default function EducationInputs({ value, onChange }: Props) {
                   updateEducation(i, "institution", e.target.value)
                 }
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                placeholder="Tech Corp"
+                placeholder="University of Technology"
               />
             </label>
 
@@ -86,7 +86,7 @@ export default function EducationInputs({ value, onChange }: Props) {
                 value={edu.degree}
                 onChange={(e) => updateEducation(i, "degree", e.target.value)}
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                placeholder="Senior Software Engineer"
+                placeholder="B.Sc. in Computer Science"
               />
             </label>
 
@@ -96,7 +96,7 @@ export default function EducationInputs({ value, onChange }: Props) {
                 value={edu.location}
                 onChange={(e) => updateEducation(i, "location", e.target.value)}
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                placeholder="Remote"
+                placeholder="Cityville, Country"
               />
             </label>
 
@@ -118,7 +118,7 @@ export default function EducationInputs({ value, onChange }: Props) {
                   updateEducation(i, "startDate", e.target.value)
                 }
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                placeholder="Jan 2020 - Present"
+                placeholder="YYYY-MM-DD"
                 type="date"
               />
             </label>
@@ -129,7 +129,7 @@ export default function EducationInputs({ value, onChange }: Props) {
                 value={edu.endDate ?? ""}
                 onChange={(e) => updateEducation(i, "endDate", e.target.value)}
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                placeholder="Jan 2020"
+                placeholder="YYYY-MM-DD"
                 type="date"
               />
             </label>
