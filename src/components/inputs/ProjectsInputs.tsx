@@ -1,4 +1,4 @@
-import type { CVData, Project } from "../../types/cv";
+import type { Project } from "../../types/cv";
 
 type Props = {
   value: Project[];
