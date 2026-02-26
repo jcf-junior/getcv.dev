@@ -18,14 +18,6 @@ export default function EducationInputs({ value, onChange }: Props) {
     onChange(next);
   };
 
-  const updateHighlights = (index: number, highlights: string[]) => {
-    const next = value.map((edu, i) =>
-      i === index ? { ...edu, highlights } : edu,
-    );
-
-    onChange(next);
-  };
-
   const removeEducation = (index: number) => {
     const newEducationArr = value.filter((_, i) => {
       return i !== index;
