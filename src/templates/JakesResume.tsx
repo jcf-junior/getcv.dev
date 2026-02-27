@@ -1,3 +1,5 @@
+import './jakesResume.css';
+
 import type {
   Certification,
   Education,
@@ -5,14 +7,14 @@ import type {
   Social,
   WorkExperience,
   CVData,
-} from "./types/cv";
-import { formatDate, formatPeriod } from "./utils/formatDate";
+} from "../types/cv";
+import { formatDate, formatPeriod } from "../utils/formatDate";
 
 type CvProps = {
   cvData: CVData;
 };
 
-export default function Cv({ cvData }: CvProps) {
+export default function JakesResume({ cvData }: CvProps) {
 
   const hasSkills =
     cvData.skills?.programmingLanguages?.length > 0 ||
