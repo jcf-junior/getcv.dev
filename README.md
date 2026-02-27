@@ -1,5 +1,5 @@
 
-# Getcv.dev
+# Getcv.dev (in active development)
 
 Getcv.dev is the simplest way for engineers to make an ATS-Optimized CV in minutes.
 ## Screenshots
