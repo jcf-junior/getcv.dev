@@ -20,6 +20,15 @@ Getcv.dev is the simplest way for engineers to make an ATS-Optimized CV in minut
 **Real-Time Editing:** Live preview updates instantly as you type.
 
 **High-Fidelity Export:** One-click export to professional-grade PDF
+
+
+## Roadmap
+
+- Drag & Drop functionality.
+- Multiple templates to choose from.
+- Custom ATS to test CVs
+
+
 ## Tech Stack
 
 - React
@@ -53,6 +62,10 @@ Start the server
 ```
 
 navigate to `localhost:5173`
+
+## Credits & Aknowlegments
+
+The CV template is a React version of the battle-tested [Jake's CV](https://github.com/jakegut/resume) originally made by [Jake Gutierrez](jakegut.com) 
 
 
 ## License
