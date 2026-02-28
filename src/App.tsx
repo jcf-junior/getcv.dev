@@ -1,9 +1,9 @@
-import Editor from "./pages/Editor";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <>
-      <Editor />
+      <Home />
     </>
   );
 }
