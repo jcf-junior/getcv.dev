@@ -101,7 +101,7 @@ export default function ProjectsInputs({ value, onChange }: Props) {
             <label className="flex flex-col font-bold text-xs text-slate-500 col-span-2">
               Project URL (Optional)
               <input
-                value={project.projectUrl ?? "suka"}
+                value={project.projectUrl ?? ""}
                 onChange={(e) => updateProject(i, "projectUrl", e.target.value)}
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none "
                 placeholder="https://getcv.dev"
