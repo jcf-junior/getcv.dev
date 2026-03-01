@@ -6,11 +6,12 @@ export default function Editor() {
   const { cvData, setCvData } = useCvData();
 
   return (
-    <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 lg:p-8">
-      <div>
+    <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:p-8">
+      <div className="no-print">
         <EditorInputs cvData={cvData} setCvData={setCvData} />
       </div>
-      <div className="sticky top-24 h-fit flex flex-col gap-4">
+
+      <div className="sticky top-5 h-fit flex flex-col gap-4">
         <div className="flex items-center justify-between no-print">
           <div className="flex items-center gap-4">
             <h3 className="text-lg font-bold text-slate-900">Live Preview</h3>
@@ -37,10 +38,8 @@ export default function Editor() {
           </div>
         </div>
 
-        <div className="">
-          <div className="">
-            <JakesResume cvData={cvData} />
-          </div>
+        <div className="w-fit shadow">
+          <JakesResume cvData={cvData} />
         </div>
       </div>
     </div>
