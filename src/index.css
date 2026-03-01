@@ -13,6 +13,7 @@
   #resume-print-target {
     margin: 0;
     display: block;
+    color: black;
   }
 
   .no-print,

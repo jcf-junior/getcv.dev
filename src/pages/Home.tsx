@@ -25,9 +25,15 @@ export default function Home() {
       <div className="relative mt-6">
         <div className="h-[50vh]"></div>
 
-        <img
+        {/* <img
           className="w-[600px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 shadow-2xl"
           src="https://placehold.co/794x1123/png"
+          alt="Preview"
+        /> */}
+
+        <img
+          className="w-[800px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 shadow-2xl"
+          src="/assets/hero-cropped.jpg"
           alt="Preview"
         />
 
