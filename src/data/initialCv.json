@@ -86,7 +86,7 @@
       "technologies": ["Django", "PostgreSQL", "Docker"],
       "startDate": "2021-01-01",
       "endDate": "2021-12-31",
-      "projectUrl": null,
+      "projectUrl": "",
       "highlights": [
         "Developed a social media application with features like user profiles, posts, and messaging.",
         "Used Django for backend development and PostgreSQL for database management.",
@@ -101,7 +101,7 @@
       "title": "Full Stack Web Development",
       "issuer": "Scrimba",
       "issueDate": "2023-05-15",
-      "credentialUrl": null
+      "credentialUrl": ""
     },
     {
       "id": "2",
