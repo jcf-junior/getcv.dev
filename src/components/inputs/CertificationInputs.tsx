@@ -54,6 +54,7 @@ export default function CertificationInputs({ value, onChange }: Props) {
           <button
             className="absolute -top-2 -right-2 bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-200 hover:cursor-pointer"
             onClick={() => removeCertification(index)}
+            aria-label="Remove Certification"
           >
             <i className="fas fa-times text-[10px]"></i>
           </button>
