@@ -43,7 +43,7 @@ export default function EducationInputs({ value, onChange }: Props) {
 
   return (
     <section className="mt-8">
-      <strong className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 mt-8">
+      <strong className="text-sm text-slate-400 uppercase tracking-widest mb-4">
         Education
       </strong>
 
@@ -56,6 +56,7 @@ export default function EducationInputs({ value, onChange }: Props) {
             <button
               className="absolute -top-2 -right-2 bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-200 hover:cursor-pointer"
               onClick={() => removeEducation(i)}
+              aria-label="Remove Education"
             >
               <i className="fas fa-times text-[10px]"></i>
             </button>

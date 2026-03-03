@@ -155,13 +155,13 @@ export default function JakesResume({ cvData }: CvProps) {
           <section className="mt-[5pt] mb-[5pt]">
             <span className="section-title">Certifications</span>
             {cvData.certifications.map((certification: Certification) => {
-              const emptyExperience: boolean =
+              const emptyCert: boolean =
                 certification.title.trim() == "" &&
                 certification.issuer.trim() == "" &&
                 certification.issueDate.trim() == "" &&
                 certification.credentialUrl.trim() == "";
 
-              return emptyExperience ? null : (
+              return emptyCert ? null : (
                 <div
                   className="flex w-[97%] ml-[0.15in] justify-between mb-[5pt] small"
                   key={`${certification.id}`}

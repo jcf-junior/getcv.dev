@@ -10,7 +10,7 @@ TODO
     [X] Fix PDF Print
     [X] Create Credits section in readme and thank Jake Gutierrez for the template
     [X] Create Roadmap section in readme - Add multiple Template selection
-    [ ] Create new release when homepage is done and when pdf printing works
+    [X] Create new release when homepage is done and when pdf printing works
     [ ] Add Drag & Drop functionality
     ~~[ ] Recreate CV without Tailwind~~
 
@@ -21,3 +21,4 @@ Bugs (create issue and add to Kanban):
     [ ] Fix socials spacing in CV preview
     [ ] Fix CV Pagination
     [ ] Fix CV position (add scrollable)
+    [X] Certifications remove button triggers on input border.

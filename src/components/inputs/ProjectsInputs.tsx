@@ -72,6 +72,7 @@ export default function ProjectsInputs({ value, onChange }: Props) {
             <button
               className="absolute -top-2 -right-2 bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-200 hover:cursor-pointer"
               onClick={() => removeProject(i)}
+              aria-label="Remove Project"
             >
               <i className="fas fa-times text-[10px]"></i>
             </button>
@@ -112,9 +113,7 @@ export default function ProjectsInputs({ value, onChange }: Props) {
               Start Date
               <input
                 value={project.startDate ?? "2000-01-01"}
-                onChange={(e) =>
-                  updateProject(i, "startDate", e.target.value)
-                }
+                onChange={(e) => updateProject(i, "startDate", e.target.value)}
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 placeholder="Jan 2020 - Present"
                 type="date"

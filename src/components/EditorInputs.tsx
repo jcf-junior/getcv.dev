@@ -27,10 +27,10 @@ export default function EditorInputs({ cvData, setCvData }: Props) {
           setCvData((cv) => ({ ...cv, personalInfo }));
         }}
       />
-      <EducationInputs 
+      <EducationInputs
         value={cvData.education}
         onChange={(education) => {
-          setCvData((cv) => ({...cv, education}))
+          setCvData((cv) => ({ ...cv, education }));
         }}
       />
 
@@ -48,17 +48,17 @@ export default function EditorInputs({ cvData, setCvData }: Props) {
         }}
       />
 
-      <SkillsInputs 
+      <SkillsInputs
         value={cvData.skills}
         onChange={(skills) => {
-          setCvData((cv) => ({...cv, skills}))
+          setCvData((cv) => ({ ...cv, skills }));
         }}
-       />
+      />
 
       <CertificationInputs
         value={cvData.certifications}
         onChange={(certifications) => {
-          setCvData((cv) => ({...cv, certifications}))
+          setCvData((cv) => ({ ...cv, certifications }));
         }}
       />
     </div>
