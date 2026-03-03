@@ -11,8 +11,8 @@ export default function CertificationInputs({ value, onChange }: Props) {
     key: keyof Certification,
     fieldValue: string,
   ) => {
-    const next = value.map((exp, i) =>
-      i === index ? { ...exp, [key]: fieldValue } : exp,
+    const next = value.map((cert, i) =>
+      i === index ? { ...cert, [key]: fieldValue } : cert,
     );
 
     onChange(next);
