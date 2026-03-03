@@ -43,7 +43,7 @@ export default function EducationInputs({ value, onChange }: Props) {
 
   return (
     <section className="mt-8">
-      <strong className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 mt-8">
+      <strong className="text-sm text-slate-400 uppercase tracking-widest mb-4">
         Education
       </strong>
 
