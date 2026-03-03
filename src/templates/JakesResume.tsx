@@ -22,6 +22,7 @@ export default function JakesResume({ cvData }: CvProps) {
     cvData.skills?.databases?.length > 0 ||
     cvData.skills?.developerTools?.length > 0;
 
+    console.log("array len: ", cvData.personalInfo.socials.length)
 
   return (
     <div className="">
@@ -31,9 +32,10 @@ export default function JakesResume({ cvData }: CvProps) {
             {cvData.personalInfo.name}
           </h1>
 
-          <div className="max-w-[97%] mt-[10pt] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap">
+          <div className="mt-[10pt] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap">
             {cvData.personalInfo.socials.map((social: Social) => {
-              return (
+              
+              return social.value === "" ? null : (
                 <span
                   className="underline px-1.5 first:pl-0 last:pr-0 whitespace-nowrap"
                   key={`${social.type}-${social.value}`}
