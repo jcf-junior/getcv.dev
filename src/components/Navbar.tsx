@@ -2,15 +2,18 @@ import { NavLink } from "react-router";
 export default function Navbar() {
   return (
     <nav className="w-full bg-white sticky top-0 z-50 shadow-sm mx-auto p-4 lg:px-8 lg:py-5 flex items-center justify-between no-print">
-      <NavLink
-        to="/"
-      >
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900 italic">
-          getcv.dev
-          <span className="ml-2 text-red-500 text-sm bg-red-100 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+      <NavLink to="/">
+        <div className="flex items-center gap-2">
+
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 italic">
+            getcv.dev
+          </h1>
+          
+          <span className="text-red-500 text-sm bg-red-100 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
             Beta
           </span>
-        </h1>
+          
+        </div>
       </NavLink>
 
       <div className="text-xl font-bold flex items-center gap-4">
