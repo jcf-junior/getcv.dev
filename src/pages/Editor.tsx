@@ -11,7 +11,7 @@ export default function Editor() {
           <EditorInputs cvData={cvData} setCvData={setCvData} />
         </div>
 
-        <iframe className="w-screen h-screen" src="/editor/preview" />
+        <iframe title="CV Live Preview" className="w-screen h-screen" src="/editor/preview" />
       </div>
     </div>
   );
