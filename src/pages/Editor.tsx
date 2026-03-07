@@ -1,9 +1,21 @@
 import EditorInputs from "../components/EditorInputs";
 import JakesResume from "../templates/JakesResume";
 import { useCvData } from "../hooks/useCvData";
+import Toolbar from "../components/Toolbar";
+import { useState } from "react";
 
 export default function Editor() {
-  const { cvData, setCvData } = useCvData();
+  const { cvData, setCvData, resetCv } = useCvData();
+
+  const [scaleFactor, setScaleFactor] = useState(0.9);
+
+  const zoomIn = () => {
+    setScaleFactor((prev) => (prev < 3 ? prev + 0.1 : prev));
+  };
+
+  const zoomOut = () => {
+    setScaleFactor((prev) => (prev >= 0.3 ? prev - 0.1 : prev));
+  };
 
   return (
     <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:p-8">
@@ -11,34 +23,10 @@ export default function Editor() {
         <EditorInputs cvData={cvData} setCvData={setCvData} />
       </div>
 
-      <div className="sticky top-5 h-fit flex flex-col gap-4">
-        <div className="flex items-center justify-between no-print">
-          <div className="flex items-center gap-4">
-            <h3 className="text-lg font-bold text-slate-900">Live Preview</h3>
-            <span className="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-bold">
-              A4 Size
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              className="flex items-center gap-2 bg-slate-900 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-slate-800 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => window.print()}
-            >
-              <i className="fas fa-download"></i>Download PDF
-            </button>
-            <button
-              className="flex items-center gap-2 bg-red-500 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-slate-800 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => {
-                localStorage.removeItem("cv-data");
-                window.location.reload();
-              }}
-            >
-              <i className="fas fa-redo"></i>Reset CV
-            </button>
-          </div>
-        </div>
+      <div className="flex flex-col gap-4">
+        <Toolbar scaleFactor={scaleFactor} zoomIn={zoomIn} zoomOut={zoomOut} resetCv={resetCv} />
 
-        <div className="w-fit shadow">
+        <div id="cv-container" className="w-fit shadow" style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}>
           <JakesResume cvData={cvData} />
         </div>
       </div>
