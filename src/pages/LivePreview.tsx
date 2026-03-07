@@ -36,7 +36,7 @@ export default function LivePreview() {
 
   return (
     <>
-      <div className="sticky flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <Toolbar zoomIn={zoomIn} zoomOut={zoomOut} scaleFactor={scaleFactor} />
 
         <div
