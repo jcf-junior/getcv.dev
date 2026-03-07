@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-neutral-800 text-center p-10 flex flex-col gap-3 font-bold no-print">
+    <footer className="w-full bg-neutral-800 text-center p-10 flex flex-col gap-3 font-bold">
       <p className="text-sm text-gray-400">
         Made with 🍵 and ❤️ by{" "}
         <a
