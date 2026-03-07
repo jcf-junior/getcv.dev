@@ -33,7 +33,7 @@ export default function PersonalInfoInputs({ value, onChange }: Props) {
         <label className="flex flex-col font-bold text-xs text-slate-500">
           Full Name
           <input
-            defaultValue={value.name}
+            value={value.name}
             onChange={(e) => updateField("name", e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             placeholder="John Doe Johnson"
@@ -44,7 +44,7 @@ export default function PersonalInfoInputs({ value, onChange }: Props) {
         <label className="flex flex-col font-bold text-xs text-slate-500">
           Email
           <input
-            defaultValue={getSocial("email")}
+            value={getSocial("email")}
             onChange={(e) => updateSocial("email", e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             placeholder="john@example.com"
@@ -56,7 +56,7 @@ export default function PersonalInfoInputs({ value, onChange }: Props) {
         <label className="flex flex-col font-bold text-xs text-slate-500">
           Phone
           <input
-            defaultValue={getSocial("phone")}
+            value={getSocial("phone")}
             onChange={(e) => updateSocial("phone", e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             placeholder="+123456789"
@@ -68,7 +68,7 @@ export default function PersonalInfoInputs({ value, onChange }: Props) {
         <label className="flex flex-col font-bold text-xs text-slate-500">
           Github
           <input
-            defaultValue={getSocial("github")}
+            value={getSocial("github")}
             onChange={(e) => updateSocial("github", e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             placeholder="github.com/johnjohnson"
@@ -79,7 +79,7 @@ export default function PersonalInfoInputs({ value, onChange }: Props) {
         <label className="flex flex-col font-bold text-xs text-slate-500">
           Linkedin
           <input
-            defaultValue={getSocial("linkedin")}
+            value={getSocial("linkedin")}
             onChange={(e) => updateSocial("linkedin", e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             placeholder="linkedin.com/in/johnjohnson"
@@ -90,7 +90,7 @@ export default function PersonalInfoInputs({ value, onChange }: Props) {
         <label className="flex flex-col font-bold text-xs text-slate-500 md:cols-span-2">
           Website
           <input
-            defaultValue={getSocial("website")}
+            value={getSocial("website")}
             onChange={(e) => updateSocial("website", e.target.value)}
             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             placeholder="johnjonson.dev"

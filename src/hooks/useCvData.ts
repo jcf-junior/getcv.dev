@@ -13,5 +13,9 @@ export function useCvData() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cvData));
   }, [cvData]);
 
-  return { cvData, setCvData };
+  const resetCv = () => {
+    setCvData(initialCv);
+  };
+
+  return { cvData, setCvData, resetCv };
 }
