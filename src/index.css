@@ -16,6 +16,11 @@
     color: black;
   }
 
+  #cv-container {
+    margin: 0;
+    scale: 1 !important;
+  }
+
   .no-print,
   .no-print * {
     display: none;

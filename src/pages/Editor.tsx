@@ -26,7 +26,7 @@ export default function Editor() {
       <div className="flex flex-col gap-4">
         <Toolbar scaleFactor={scaleFactor} zoomIn={zoomIn} zoomOut={zoomOut} resetCv={resetCv} />
 
-        <div className="w-fit shadow" style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}>
+        <div id="cv-container" className="w-fit shadow" style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}>
           <JakesResume cvData={cvData} />
         </div>
       </div>
