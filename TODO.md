@@ -18,7 +18,7 @@ TODO
 Bugs (create issue and add to Kanban):
     [X] Removing all experience inputs does not remove Experience title from CV
     [X] Adding an empty project show a separator ("|") in the CV Preview and date renders.
-    [ ] Fix socials spacing in CV preview
+    [X] Fix socials spacing in CV preview
     [ ] Fix CV Pagination
     [ ] Fix CV position (add scrollable)
     [X] Certifications remove button triggers on input border.
