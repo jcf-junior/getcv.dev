@@ -1,17 +1,16 @@
-import type React from "react";
-
 type Props = {
   scaleFactor: number;
-  setScaleFactor: React.Dispatch<React.SetStateAction<number>>;
+  zoomIn: () => void;
+  zoomOut: () => void;
 };
 
-export default function Toolbar({ setScaleFactor, scaleFactor }: Props) {
+export default function Toolbar({ zoomIn, zoomOut, scaleFactor }: Props) {
   return (
     <div className="flex gap-5 justify-center items-center no-print">
       <div className="bg-white flex items-center justify-center rounded-2xl gap-1 text-gray-100">
         <button
           className="flex gap-2 items-center px-5 py-2 rounded-l-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
-          onClick={() => setScaleFactor((prev) => prev + 0.1)}
+          onClick={() => zoomIn()}
         >
           <i className="fas fa-magnifying-glass-plus"></i>
           Zoom In
@@ -23,7 +22,7 @@ export default function Toolbar({ setScaleFactor, scaleFactor }: Props) {
 
         <button
           className="flex gap-2 items-center px-5 py-2 rounded-r-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
-          onClick={() => setScaleFactor((prev) => prev - 0.1)}
+          onClick={() => zoomOut()}
         >
           <i className="fas fa-magnifying-glass-minus"></i>
           Zoom Out
