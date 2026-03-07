@@ -27,11 +27,12 @@ export default function LivePreview() {
   });
 
   const zoomIn = () => {
-    setScaleFactor((prev) => prev + 0.1);
+    setScaleFactor((prev) => prev <= 2.9 ? prev + 0.1 : prev);
   };
 
   const zoomOut = () => {
-    setScaleFactor((prev) => prev - 0.1);
+
+    setScaleFactor((prev) => prev >= 0.4 ? prev - 0.1 : prev);
   };
 
   return (
