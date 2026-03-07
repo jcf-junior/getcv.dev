@@ -8,12 +8,14 @@
   @page {
     size: A4;
     margin: 0;
+    scale: 1;
   }
 
   #resume-print-target {
     margin: 0;
     display: block;
     color: black;
+    scale: 1;
   }
 
   .no-print,

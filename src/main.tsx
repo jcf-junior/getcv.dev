@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Editor from "./pages/Editor.tsx";
 import Home from "./pages/Home.tsx";
 import Tips from "./pages/Tips.tsx";
+import LivePreview from "./pages/LivePreview.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/editor" element={<Editor />} />
           <Route path="/tips" element={<Tips />} />
         </Route>
+        <Route path="/editor/preview" element={<LivePreview />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
