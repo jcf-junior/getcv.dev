@@ -10,11 +10,11 @@ export default function Editor() {
   const [scaleFactor, setScaleFactor] = useState(0.9);
 
   const zoomIn = () => {
-    setScaleFactor((prev) => (prev > 0.3 ? prev - 0.1 : prev));
+    setScaleFactor((prev) => (prev < 3 ? prev + 0.1 : prev));
   };
 
   const zoomOut = () => {
-    setScaleFactor((prev) => (prev < 3 ? prev - 0.1 : prev));
+    setScaleFactor((prev) => (prev >= 0.3 ? prev - 0.1 : prev));
   };
 
   return (
@@ -26,7 +26,7 @@ export default function Editor() {
       <div className="flex flex-col gap-4">
         <Toolbar scaleFactor={scaleFactor} zoomIn={zoomIn} zoomOut={zoomOut} resetCv={resetCv} />
 
-        <div className="w-fit shadow">
+        <div className="w-fit shadow" style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}>
           <JakesResume cvData={cvData} />
         </div>
       </div>
