@@ -20,10 +20,9 @@
 }
 
 @font-face {
-  font-family: "Latin Modern";
-  src: url("/fonts/lmroman10caps-regular.otf");
+  font-family: "Latin Modern Caps";
+  src: url("/fonts/lmromancaps10-regular.otf");
   font-weight: normal;
-  font-style: normal;
   font-variant: small-caps;
 }
 
@@ -33,6 +32,8 @@
 
 .lm {
   font-family: "Latin Modern", serif;
+  font-style: normal;
+  font-variant: normal;
 }
 
 .lm-italic {
@@ -49,7 +50,7 @@
 }
 
 .section-title {
-  font-family: "Latin Modern", serif;
+  font-family: "Latin Modern Caps", serif;
   font-variant: small-caps;
   border-bottom: 1px solid black;
   width: 100%;

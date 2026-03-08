@@ -22,8 +22,6 @@ export default function JakesResume({ cvData }: CvProps) {
     cvData.skills?.databases?.length > 0 ||
     cvData.skills?.developerTools?.length > 0;
 
-    console.log("array len: ", cvData.personalInfo.socials.length)
-
   return (
     <div className="">
       <div id="resume-print-target" className="my-0 mx-auto lm leading-[1.2em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white text-black">
