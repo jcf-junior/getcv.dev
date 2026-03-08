@@ -5,9 +5,14 @@ type Props = {
   resetCv: () => void;
 };
 
-export default function Toolbar({ zoomIn, zoomOut, scaleFactor, resetCv }: Props) {
+export default function Toolbar({
+  zoomIn,
+  zoomOut,
+  scaleFactor,
+  resetCv,
+}: Props) {
   return (
-    <div className="flex gap-5 justify-center items-center no-print">
+    <div className="flex gap-5 justify-center items-center">
       <div className="bg-white flex items-center justify-center rounded-2xl gap-1 text-gray-100">
         <button
           className="flex gap-2 items-center px-5 py-2 rounded-l-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"

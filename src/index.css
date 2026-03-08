@@ -4,25 +4,26 @@
   font-family: "Inter";
 }
 
+.screen-height {
+  height: calc(100vh - 150px);
+}
+
 @media print {
   @page {
     size: A4;
     margin: 0;
   }
 
-  #resume-print-target {
-    margin: 0;
-    display: block;
-    color: black;
-  }
-
-  #cv-container {
-    margin: 0;
-    scale: 1 !important;
-  }
-
-  .no-print,
-  .no-print * {
+  #root {
     display: none;
   }
+
+  #print-target,
+  #print-target > * {
+    display: block !important;
+  }
+}
+
+#print-target {
+  display: none;
 }
