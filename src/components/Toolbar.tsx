@@ -1,3 +1,5 @@
+import { MIN_ZOOM, MAX_ZOOM } from "../constants/zoom";
+
 type Props = {
   scaleFactor: number;
   setScaleFactor: (value: number) => void;
@@ -32,8 +34,9 @@ export default function Toolbar({
           onKeyDown={(e) => {
             if (e.key == "Enter") {
               const val = parseInt(e.currentTarget.value);
-              if (!isNaN(val) && val > 0 && val <= 300) {
-                setScaleFactor(val / 100);
+              if (!isNaN(val)) {
+                const clamped = Math.min(MAX_ZOOM * 100, Math.max(MIN_ZOOM * 100, val));
+                setScaleFactor(clamped / 100);
               }
             }
           }}

@@ -4,6 +4,7 @@ import { useCvData } from "../hooks/useCvData";
 import Toolbar from "../components/Toolbar";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { MIN_ZOOM, MAX_ZOOM } from "../constants/zoom";
 
 export default function Editor() {
   const { cvData, setCvData, resetCv } = useCvData();
@@ -11,11 +12,11 @@ export default function Editor() {
   const [scaleFactor, setScaleFactor] = useState(1);
 
   const zoomIn = () => {
-    setScaleFactor((prev) => (prev < 3 ? prev + 0.1 : prev));
+    setScaleFactor((prev) => Math.min(MAX_ZOOM, prev + 0.1));
   };
 
   const zoomOut = () => {
-    setScaleFactor((prev) => Math.max(0.3, prev - 0.1));
+    setScaleFactor((prev) => Math.max(MIN_ZOOM, prev - 0.1));
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
