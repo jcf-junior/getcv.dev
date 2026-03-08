@@ -26,6 +26,7 @@ export default function Toolbar({
 
         <input
           key={scaleFactor}
+          aria-label="Zoom percentage"
           defaultValue={(scaleFactor * 100).toFixed(0) + "%"}
           className="text-black font-bold w-[50px] text-center focus:outline-none"
           onKeyDown={(e) => {
@@ -36,7 +37,7 @@ export default function Toolbar({
               }
             }
           }}
-        ></input>
+        />
 
         <button
           className="flex gap-2 items-center px-5 py-2 rounded-r-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
