@@ -1,5 +1,6 @@
 type Props = {
   scaleFactor: number;
+  setScaleFactor: (value: number) => void;
   zoomIn: () => void;
   zoomOut: () => void;
   resetCv: () => void;
@@ -9,6 +10,7 @@ export default function Toolbar({
   zoomIn,
   zoomOut,
   scaleFactor,
+  setScaleFactor,
   resetCv,
 }: Props) {
   return (
@@ -22,9 +24,19 @@ export default function Toolbar({
           Zoom In
         </button>
 
-        <div className="text-black font-bold">
-          {(scaleFactor * 100).toFixed(0)}%
-        </div>
+        <input
+          key={scaleFactor}
+          defaultValue={(scaleFactor * 100).toFixed(0) + "%"}
+          className="text-black font-bold w-[50px] text-center focus:outline-none"
+          onKeyDown={(e) => {
+            if (e.key == "Enter") {
+              const val = parseInt(e.currentTarget.value);
+              if (!isNaN(val) && val > 0 && val <= 300) {
+                setScaleFactor(val / 100);
+              }
+            }
+          }}
+        ></input>
 
         <button
           className="flex gap-2 items-center px-5 py-2 rounded-r-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
