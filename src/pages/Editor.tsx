@@ -15,7 +15,7 @@ export default function Editor() {
   };
 
   const zoomOut = () => {
-    setScaleFactor((prev) => (prev >= 0.3 ? prev - 0.1 : prev));
+    setScaleFactor((prev) => Math.max(0.3, prev - 0.1));
   };
 
   const containerRef = useRef<HTMLDivElement>(null);
