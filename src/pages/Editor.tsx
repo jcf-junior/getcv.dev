@@ -2,34 +2,65 @@ import EditorInputs from "../components/EditorInputs";
 import JakesResume from "../templates/JakesResume";
 import { useCvData } from "../hooks/useCvData";
 import Toolbar from "../components/Toolbar";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { MIN_ZOOM, MAX_ZOOM } from "../constants/zoom";
 
 export default function Editor() {
   const { cvData, setCvData, resetCv } = useCvData();
 
-  const [scaleFactor, setScaleFactor] = useState(0.9);
+  const [scaleFactor, setScaleFactor] = useState(1);
 
   const zoomIn = () => {
-    setScaleFactor((prev) => (prev < 3 ? prev + 0.1 : prev));
+    setScaleFactor((prev) => Math.min(MAX_ZOOM, prev + 0.1));
   };
 
   const zoomOut = () => {
-    setScaleFactor((prev) => (prev >= 0.3 ? prev - 0.1 : prev));
+    setScaleFactor((prev) => Math.max(MIN_ZOOM, prev - 0.1));
   };
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+      const cvWidth = 8.27 * 110; //8.27in * 110dpi
+      setScaleFactor(containerWidth / cvWidth);
+    }
+  }, []);
+
   return (
-    <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:p-8">
-      <div className="no-print">
-        <EditorInputs cvData={cvData} setCvData={setCvData} />
-      </div>
+    <>
+      {createPortal(
+        <JakesResume cvData={cvData} />,
+        document.getElementById("print-target")!,
+      )}
 
-      <div className="flex flex-col gap-4">
-        <Toolbar scaleFactor={scaleFactor} zoomIn={zoomIn} zoomOut={zoomOut} resetCv={resetCv} />
+      <div className="flex px-6 py-6 gap-4 screen-height">
+        <div className="w-1/2 border border-gray-500 rounded-lg p-6 overflow-y-scroll">
+          <EditorInputs cvData={cvData} setCvData={setCvData} />
+        </div>
 
-        <div id="cv-container" className="w-fit shadow" style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}>
-          <JakesResume cvData={cvData} />
+        <div
+          ref={containerRef}
+          className="w-1/2 flex flex-col items-center gap-4 border border-gray-500 rounded-lg p-6 overflow-y-scroll"
+        >
+          <Toolbar
+            scaleFactor={scaleFactor}
+            setScaleFactor={setScaleFactor}
+            zoomIn={zoomIn}
+            zoomOut={zoomOut}
+            resetCv={resetCv}
+          />
+
+          <div
+            className="w-fit shadow"
+            style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}
+          >
+            <JakesResume cvData={cvData} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
