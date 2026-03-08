@@ -12,8 +12,8 @@ jobs:
       - name: Install Dependencies
         run: npm install -g pnpm && pnpm install
 
-      # - name: Typecheck
-      #   run: pnpm typecheck
+      - name: Typecheck
+        run: pnpm typecheck
 
       - name: Lint
         run: pnpm lint
