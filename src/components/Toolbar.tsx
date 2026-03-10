@@ -16,7 +16,6 @@ export default function Toolbar({
   setScaleFactor,
   resetCv,
 }: Props) {
-
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
@@ -55,17 +54,28 @@ export default function Toolbar({
           className="w-12 text-center bg-transparent focus:outline-none focus:ring-1 focus:ring-indigo-500 rounded"
         />
 
-
-        <button className="w-4 h-4 cursor-pointer" onClick={() => zoomIn()} aria-label="Zoom in">
+        <button
+          className="w-4 h-4 cursor-pointer"
+          onClick={() => zoomIn()}
+          aria-label="Zoom in"
+        >
           <i className="fa fa-plus"></i>
         </button>
 
         <div className="h-4 bg-slate-200 w-px mx-1"></div>
 
-        <button className="cursor-pointer" onClick={() => resetCv()} aria-label="Reset CV">
+        <button
+          className="cursor-pointer"
+          onClick={() => resetCv()}
+          aria-label="Reset CV"
+        >
           <i className="fa fa-arrows-rotate"></i>
         </button>
-        <button className="bg-indigo-600 rounded-full px-4 py-1.5 text-white ml-3 hover:bg-indigo-700 transition-all cursor-pointer" aria-label="Download PDF">
+        <button
+          className="bg-indigo-600 rounded-full px-4 py-1.5 text-white ml-3 hover:bg-indigo-700 transition-all cursor-pointer"
+          onClick={() => window.print()}
+          aria-label="Download PDF"
+        >
           Download PDF
         </button>
       </div>
