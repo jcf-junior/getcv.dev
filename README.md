@@ -65,7 +65,7 @@ navigate to `localhost:5173`
 
 ## Credits & Aknowlegments
 
-The CV template is a React version of the battle-tested [Jake's CV](https://github.com/jakegut/resume) originally made by [Jake Gutierrez](jakegut.com) 
+- The template used is a React version of the battle-tested [Jake's Resume](https://github.com/jakegut/resume) originally made by [Jake Gutierrez](jakegut.com) 
 
 
 ## License
