@@ -16,56 +16,43 @@ export default function Toolbar({
   resetCv,
 }: Props) {
   return (
-    <div className="flex gap-5 justify-center items-center">
-      <div className="bg-white flex items-center justify-center rounded-2xl gap-1 text-gray-100">
-        <button
-          className="flex gap-2 items-center px-5 py-2 rounded-l-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
-          onClick={() => zoomIn()}
-        >
-          <i className="fas fa-magnifying-glass-plus"></i>
-          Zoom In
+    <>
+      <div className="py-1.5 px-4 text-xs flex items-center justify-center gap-3 font-bold text-gray-800 rounded-full shadow-sm border-1 border-slate-200 bg-white mb-6">
+        <button className="w-4 h-4 cursor-pointer" onClick={() => zoomOut()}>
+          <i className="fa fa-minus"></i>
         </button>
 
         <input
-          key={scaleFactor}
-          aria-label="Zoom percentage"
-          defaultValue={(scaleFactor * 100).toFixed(0) + "%"}
-          className="text-black font-bold w-[50px] text-center focus:outline-none"
+          defaultValue={`${(scaleFactor * 100).toFixed(0)}%`}
+          className="w-10 text-center"
           onKeyDown={(e) => {
             if (e.key == "Enter") {
               const val = parseInt(e.currentTarget.value);
               if (!isNaN(val)) {
-                const clamped = Math.min(MAX_ZOOM * 100, Math.max(MIN_ZOOM * 100, val));
+                const clamped = Math.min(
+                  MAX_ZOOM * 100,
+                  Math.max(MIN_ZOOM * 100, val),
+                );
                 setScaleFactor(clamped / 100);
               }
             }
           }}
         />
+        <button className="w-4 h-4 cursor-pointer" onClick={() => zoomIn()}>
+          <i className="fa fa-plus"></i>
+        </button>
 
-        <button
-          className="flex gap-2 items-center px-5 py-2 rounded-r-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
-          onClick={() => zoomOut()}
-        >
-          <i className="fas fa-magnifying-glass-minus"></i>
-          Zoom Out
+        <div className="h-4 bg-slate-200 w-px mx-1"></div>
+
+        <button className="cursor-pointer" onClick={() => resetCv()}>
+          <i className="fa fa-arrows-rotate"></i>
+        </button>
+        <button className="bg-indigo-600 rounded-full px-4 py-1.5 text-white ml-3 hover:bg-indigo-700 transition-all cursor-pointer">
+          Download PDF
         </button>
       </div>
-
-      <button
-        className="flex items-center gap-2 bg-slate-900 text-white px-5 py-2 rounded-xl font-bold hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-        onClick={() => window.print()}
-      >
-        <i className="fas fa-download"></i>Download PDF
-      </button>
-
-      <button
-        className="flex items-center gap-2 bg-red-500 text-white px-5 py-2 rounded-xl font-bold hover:bg-red-600 hover:scale-105 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-        onClick={() => {
-          resetCv();
-        }}
-      >
-        <i className="fas fa-redo"></i>Reset CV
-      </button>
-    </div>
+    </>
   );
 }
+
+

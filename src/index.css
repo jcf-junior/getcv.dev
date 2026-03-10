@@ -8,6 +8,12 @@
   height: calc(100vh - 150px);
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Impede scroll global */
+}
+
 @media print {
   @page {
     size: A4;
