@@ -143,7 +143,7 @@ export default function ExperienceInputs({ value, onChange }: Props) {
       })}
 
       <button
-        className="px-4 py-2 border rounded-xl mx-auto hover:cursor-pointer"
+        className="px-6 py-1.5 border rounded-full bg-indigo-600 text-white text-sm font-bold block mx-auto hover:bg-indigo-700 hover:cursor-pointer transition-colors"
         onClick={() => addExperience()}
       >
         <i className="fas fa-add" />
