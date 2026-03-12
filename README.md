@@ -4,7 +4,7 @@
 Getcv.dev is the simplest way for engineers to make an ATS-Optimized CV in minutes.
 ## Screenshots
 
-![App Screenshot]([https://dummyimage.com/468x300?text=App+Screenshot+Here](https://github.com/jcf-junior/getcv.dev/blob/main/public/assets/getcv-readme.png])
+![App Screenshot](https://github.com/jcf-junior/getcv.dev/blob/main/public/assets/getcv-readme.png)
 
 
 ## Features
