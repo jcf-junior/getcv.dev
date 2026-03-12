@@ -36,23 +36,23 @@ export default function Editor() {
         document.getElementById("print-target")!,
       )}
 
-      <div className="h-screen flex  gap-4 ">
-        <div className="w-1/2 border border-gray-500 rounded-lg p-6 overflow-y-scroll bg-slate-100">
+      <div className="h-screen grid grid-cols-2 gap-4 bg-slate-100">
+        <div className="overflow-y-scroll border-gray-600 border-r-2">
           <EditorInputs cvData={cvData} setCvData={setCvData} />
         </div>
-
         <div
-          className="h-full w-1/2 p-6 flex flex-col items-center gap-4 border border-gray-500 rounded-lg overflow-y-scroll bg-slate-100"
+          className="h-full p-6 flex flex-col items-center gap-4 overflow-y-scroll bg-slate-100"
           ref={containerRef}
         >
-          <Toolbar
-            scaleFactor={scaleFactor}
-            setScaleFactor={setScaleFactor}
-            zoomIn={zoomIn}
-            zoomOut={zoomOut}
-            resetCv={resetCv}
-          />
-
+          <div className="sticky top-0 z-9999">
+            <Toolbar
+              scaleFactor={scaleFactor}
+              setScaleFactor={setScaleFactor}
+              zoomIn={zoomIn}
+              zoomOut={zoomOut}
+              resetCv={resetCv}
+            />
+          </div>
           <div
             className="shadow"
             style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}

@@ -5,7 +5,8 @@ export interface PersonalInfo {
 }
 
 export interface Social {
-  type: string;
+  id: string;
+  link: string;
   value: string;
 }
 

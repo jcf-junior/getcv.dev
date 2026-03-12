@@ -5,23 +5,28 @@
     "summary": "Full Stack Developer with 5 years of experience in building web applications using modern technologies. Skilled in JavaScript, React, Node.js, and database management.",
     "socials": [
       {
-        "type": "email",
+        "id": "email",
+        "link": "mailto:john@example.com",
         "value": "john@example.com"
       },
       {
-        "type": "phone",
+        "id":"phone",
+        "link": "tel:+1234567890",
         "value": "+1234567890"
       },
       {
-        "type": "linkedin",
+        "id": "linkedin",
+        "link": "https://linkedin.com/in/johnjonhson",
         "value": "linkedin.com/in/johnjohnson"
       },
       {
-        "type": "github",
+        "id": "github",
+        "link": "https://github.com/johnjohnson",
         "value": "github.com/johnjohnson"
       },
       {
-        "type": "website",
+        "id": "website",
+        "link": "https://www.johnjohnson.com",
         "value": "www.johnjohnson.com"
       }
     ]

@@ -36,9 +36,11 @@ export default function JakesResume({ cvData }: CvProps) {
               return social.value === "" ? null : (
                 <span
                   className="underline px-1.5 first:pl-0 last:pr-0 whitespace-nowrap"
-                  key={`${social.type}-${social.value}`}
+                  key={`${social.id}`}
                 >
+                  <a className='lm' href={social.link} target="_blank" rel="noopener noreferrer">
                   {social.value}
+                  </a>
                 </span>
               );
             })}
