@@ -26,6 +26,11 @@
   font-variant: small-caps;
 }
 
+* {
+  box-sizing: border-box !important;
+  line-height: 1em !important;
+}
+
 .shadow {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -52,8 +57,15 @@
 .section-title {
   font-family: "Latin Modern Caps", serif;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
-  width: 100%;
   display: block;
-  margin-bottom: 2pt;
+  margin-bottom: 3pt;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: 3pt;
 }
