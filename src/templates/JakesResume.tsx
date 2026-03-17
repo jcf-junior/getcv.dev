@@ -29,7 +29,7 @@ export default function JakesResume({ cvData }: CvProps) {
             {cvData.personalInfo.name}
           </h1>
 
-          <div className="mt-[1.5pt] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap">
+          <div className="mt-[1.5pt] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap gap-y-[3pt]">
             {cvData.personalInfo.socials.map((social: Social) => {
               return social.value === "" ? null : (
                 <span
@@ -141,7 +141,10 @@ export default function JakesResume({ cvData }: CvProps) {
                       {project.highlights.map(
                         (highlight: string, index: number) => {
                           return (
-                            <li key={`highlight-${index}`} className="mb-[3.75pt]">
+                            <li
+                              key={`highlight-${index}`}
+                              className="mb-[3.75pt]"
+                            >
                               {highlight}
                             </li>
                           );
@@ -185,30 +188,30 @@ export default function JakesResume({ cvData }: CvProps) {
         {hasSkills && (
           <section className="mt-[8pt]">
             <span className="section-title">Technical Skills</span>
-            <div className="w-[97%] ml-[0.15in] small flex flex-col gap-[5pt] leading-[1em]">
+            <div className="w-[97%] ml-[0.15in] small flex flex-col gap-[5.25pt] leading-[1em]">
               {cvData.skills.programmingLanguages.length > 0 && (
-                <div>
+                <div className="flex gap-1.5">
                   <strong>Programming Languages: </strong>
                   <span>{cvData.skills.programmingLanguages.join(", ")}</span>
                 </div>
               )}
 
               {cvData.skills.frameworks.length > 0 && (
-                <div>
+                <div className="flex gap-1.5">
                   <strong>Frameworks / Libraries: </strong>
                   <span>{cvData.skills.frameworks.join(", ")}</span>
                 </div>
               )}
 
               {cvData.skills.databases.length > 0 && (
-                <div>
-                  <strong>Databases: </strong>
+                <div className="flex gap-1.5">
+                  <strong>Databases:</strong>
                   <span>{cvData.skills.databases.join(", ")}</span>
                 </div>
               )}
 
               {cvData.skills.developerTools.length > 0 && (
-                <div>
+                <div className="flex gap-1.5">
                   <strong>Developer Tools: </strong>
                   <span>{cvData.skills.developerTools.join(", ")}</span>
                 </div>
