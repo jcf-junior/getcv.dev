@@ -25,11 +25,11 @@ export default function JakesResume({ cvData }: CvProps) {
     <div>
       <div className="my-0 mx-auto lm leading-[1em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white text-black box-border">
         <section className="mt-[5pt] mb-[5pt]">
-          <h1 className="text-center text-[24.79pt] font-bold">
+          <h1 className="text-center text-[24.79pt] font-bold mb-[7.35pt]">
             {cvData.personalInfo.name}
           </h1>
 
-          <div className="mt-[1.5pt] mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap gap-y-[3pt]">
+          <div className="mx-auto divide-x divide-gray-600 flex justify-center items-center flex-wrap gap-y-[3pt]">
             {cvData.personalInfo.socials.map((social: Social) => {
               return social.value === "" ? null : (
                 <span
