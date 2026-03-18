@@ -13,5 +13,5 @@ export const formatDate = (dateString: string | null): string => {
 };
 
 export const formatPeriod = (start = "2020-01-01", end: string | null): string => {
-  return `${formatDate(start)} - ${formatDate(end)}`;
+  return `${formatDate(start)} \u2013 ${formatDate(end)}`;
 };
