@@ -23,7 +23,7 @@ export default function JakesResume({ cvData }: CvProps) {
 
   return (
     <div>
-      <div className="my-0 mx-auto lm leading-[1em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white text-black">
+      <div className="my-0 mx-auto lm leading-[1em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white text-black box-border">
         <section className="mt-[5pt] mb-[5pt]">
           <h1 className="text-center text-[24.79pt] font-bold">
             {cvData.personalInfo.name}
@@ -191,14 +191,14 @@ export default function JakesResume({ cvData }: CvProps) {
             <div className="w-[97%] ml-[0.15in] small flex flex-col gap-[5.25pt] leading-[1em]">
               {cvData.skills.programmingLanguages.length > 0 && (
                 <div className="flex gap-1.5">
-                  <strong>Programming Languages: </strong>
+                  <strong>Programming Languages:</strong>
                   <span>{cvData.skills.programmingLanguages.join(", ")}</span>
                 </div>
               )}
 
               {cvData.skills.frameworks.length > 0 && (
                 <div className="flex gap-1.5">
-                  <strong>Frameworks / Libraries: </strong>
+                  <strong>Frameworks / Libraries:</strong>
                   <span>{cvData.skills.frameworks.join(", ")}</span>
                 </div>
               )}
@@ -212,7 +212,7 @@ export default function JakesResume({ cvData }: CvProps) {
 
               {cvData.skills.developerTools.length > 0 && (
                 <div className="flex gap-1.5">
-                  <strong>Developer Tools: </strong>
+                  <strong>Developer Tools:</strong>
                   <span>{cvData.skills.developerTools.join(", ")}</span>
                 </div>
               )}

@@ -26,11 +26,6 @@
   font-variant: small-caps;
 }
 
-* {
-  box-sizing: border-box !important;
-  line-height: 1em !important;
-}
-
 .shadow {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
