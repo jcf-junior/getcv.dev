@@ -16,26 +16,28 @@ export default function Toolbar({
   resetCv,
 }: Props) {
   return (
-    <div className="flex gap-5 justify-center items-center">
-      <div className="bg-white flex items-center justify-center rounded-2xl gap-1 text-gray-100">
+    <div className="fixed bottom-10 mx-auto flex gap-5 w-fit justify-center items-center bg-white rounded-full px-2 py-2 border border-slate-200 shadow-lg z-9999">
+      <div className="bg-white flex gap-1 items-center justify-center text-gray-100">
         <button
-          className="flex gap-2 items-center px-5 py-2 rounded-l-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
-          onClick={() => zoomIn()}
+          className="text-slate-500 hover:text-slate-800 cursor-pointer transition-all"
+          onClick={() => zoomOut()}
         >
-          <i className="fas fa-magnifying-glass-plus"></i>
-          Zoom In
+          <i className="fas fa-minus"></i>
         </button>
 
         <input
           key={scaleFactor}
           aria-label="Zoom percentage"
           defaultValue={(scaleFactor * 100).toFixed(0) + "%"}
-          className="text-black font-bold w-[50px] text-center focus:outline-none"
+          className="text-slate-500 w-[5ch] font-bold px-1 text-center focus:outline-none text-xs"
           onKeyDown={(e) => {
             if (e.key == "Enter") {
               const val = parseInt(e.currentTarget.value);
               if (!isNaN(val)) {
-                const clamped = Math.min(MAX_ZOOM * 100, Math.max(MIN_ZOOM * 100, val));
+                const clamped = Math.min(
+                  MAX_ZOOM * 100,
+                  Math.max(MIN_ZOOM * 100, val),
+                );
                 setScaleFactor(clamped / 100);
               }
             }
@@ -43,28 +45,29 @@ export default function Toolbar({
         />
 
         <button
-          className="flex gap-2 items-center px-5 py-2 rounded-r-2xl bg-slate-900 hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all"
-          onClick={() => zoomOut()}
+          className="text-slate-500 hover:text-slate-800 cursor-pointer transition-all"
+          onClick={() => zoomIn()}
         >
-          <i className="fas fa-magnifying-glass-minus"></i>
-          Zoom Out
+          <i className="fas fa-plus"></i>
         </button>
       </div>
 
-      <button
-        className="flex items-center gap-2 bg-slate-900 text-white px-5 py-2 rounded-xl font-bold hover:bg-slate-800 hover:scale-105 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-        onClick={() => window.print()}
-      >
-        <i className="fas fa-download"></i>Download PDF
-      </button>
+      <span className="w-px h-4 bg-slate-300"></span>
 
       <button
-        className="flex items-center gap-2 bg-red-500 text-white px-5 py-2 rounded-xl font-bold hover:bg-red-600 hover:scale-105 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="text-slate-500 hover:text-slate-800 cursor-pointer transition-all"
         onClick={() => {
           resetCv();
         }}
       >
-        <i className="fas fa-redo"></i>Reset CV
+        <i className="fas fa-redo"></i>
+      </button>
+
+      <button
+        className="flex items-center gap-2 bg-indigo-600 text-white px-6 py-2 rounded-full font-bold hover:bg-slate-800 cursor-pointer transition-all shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+        onClick={() => window.print()}
+      >
+        <i className="fas fa-print"></i>Print PDF
       </button>
     </div>
   );

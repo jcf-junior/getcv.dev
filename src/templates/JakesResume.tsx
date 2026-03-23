@@ -23,7 +23,7 @@ export default function JakesResume({ cvData }: CvProps) {
 
   return (
     <div>
-      <div className="my-0 mx-auto lm leading-[1em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white text-black box-border">
+      <div className="m-0 lm leading-[1em] text-[10.91pt] w-[8.27in] h-[11.69in] p-[0.5in] bg-white text-black box-border block z-10">
         <section className="mt-[5pt] mb-[5pt]">
           <h1 className="text-center text-[24.79pt] font-bold mb-[9pt]">
             {cvData.personalInfo.name}

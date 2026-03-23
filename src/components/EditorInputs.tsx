@@ -13,7 +13,7 @@ type Props = {
 
 export default function EditorInputs({ cvData, setCvData }: Props) {
   return (
-    <div className="bg-white p-4 rounded-3xl">
+    <div className="bg-white p-4">
       <h2 className="text-2xl font-bold text-slate-900 mb-2">Editor Inputs</h2>
       <p className="text-slate-500 text-sm mb-6">
         Your progress is saved automatically on Local Storage.
