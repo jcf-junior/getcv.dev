@@ -4,10 +4,6 @@
   font-family: "Inter";
 }
 
-.screen-height {
-  height: calc(100vh - 150px);
-}
-
 @media print {
   @page {
     size: A4;
@@ -21,6 +17,8 @@
   #print-target,
   #print-target > * {
     display: block !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 

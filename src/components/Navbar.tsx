@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 export default function Navbar() {
   return (
-    <nav className="w-full bg-white sticky top-0 z-50 shadow-sm mx-auto p-4 lg:px-8 lg:py-5 flex items-center justify-between">
+    <nav className="w-full bg-white shadow-sm mx-auto p-4 lg:px-8 lg:py-5 flex items-center justify-between border-b border-gray-300">
       <NavLink
         to="/"
       >

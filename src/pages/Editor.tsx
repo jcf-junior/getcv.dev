@@ -36,14 +36,16 @@ export default function Editor() {
         document.getElementById("print-target")!,
       )}
 
-      <div className="flex px-6 py-6 gap-4 screen-height">
-        <div className="w-1/2 border border-gray-500 rounded-lg p-6 overflow-y-scroll">
+      <div className="flex h-[calc(100vh-72px)]">
+        <div className="w-2/5 border-r border-gray-500 overflow-y-scroll z-1">
           <EditorInputs cvData={cvData} setCvData={setCvData} />
         </div>
 
         <div
           ref={containerRef}
-          className="w-1/2 flex flex-col items-center gap-4 border border-gray-500 rounded-lg p-6 overflow-y-scroll"
+          className="w-3/5 flex flex-col items-center gap-4 rounded-lg z-0 
+           bg-gray-100 pt-6 h-full overflow-scroll"
+
         >
           <Toolbar
             scaleFactor={scaleFactor}
@@ -54,8 +56,8 @@ export default function Editor() {
           />
 
           <div
-            className="w-fit shadow"
-            style={{ scale: `${scaleFactor}`, transformOrigin: "top center" }}
+            className="w-fit shadow mx-auto block"
+            style={{ zoom: `${scaleFactor}` }}
           >
             <JakesResume cvData={cvData} />
           </div>

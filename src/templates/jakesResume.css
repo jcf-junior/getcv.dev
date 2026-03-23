@@ -61,6 +61,7 @@
   display: block;
   width: 100%;
   height: 1px;
+  border-top: 1px solid black;
   background-color: black;
   margin-top: 3pt;
 }
